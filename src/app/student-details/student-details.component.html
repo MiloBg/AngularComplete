@@ -1,0 +1,41 @@
+<div class="students">
+
+    <button (click)="ugasiDetalje()">Zatvori</button>
+
+    <label>Ime:</label> <br>
+    <input type="text" [(ngModel)]="student.ime" appHighlight><br>
+    <label>Prezime:</label> <br>
+    <input type="text" [(ngModel)]="student.prezime" appHighlight> <br>
+    <label>Broj Indeksa:</label> <br>
+    <input type="text" [(ngModel)]="student.brojIndeksa" appHighlight> <br>
+    <label>Godina studiranja:</label> <br>
+    <input type="number" id="godinaStudiranja" [(ngModel)]="student.godinaStudiranja" appHighlight> <br>
+    <label>Status budzeta:</label> <br>
+    <input type="radio" name="statusBudzeta" [(ngModel)]="student.statusBudzeta" value="Budzet">Budzet
+    <input type="radio" name="statusBudzeta" [(ngModel)]="student.statusBudzeta" value="Samofinansirajuci">Samofinansiranje <br>
+    <label>Aktivan:</label> <br>
+    <input type="checkbox" [(ngModel)]="student.aktivan">Aktivan<br>
+    <button [disabled]="omoguciDugme" (click)="sacuvajStudenta()">Sačuvaj</button>
+    <button (click)="obrisiUnos()">Obriši</button> <br>
+
+    <p [innerText]="unesiStudenta"></p>
+
+    <ul class="students">
+        <li *ngFor="let student of students">
+            <span class="badge">{{ student.brojIndeksa }}</span>
+            <span class="name">{{ student.ime }} {{ student.prezime }}</span>
+        </li>
+    </ul>
+
+    <hr>
+
+    <div class="students">
+        Ime studenta: {{ student.ime }} <br>
+        Prezime studenta: {{ student.prezime }} <br>
+        Broj indeksa: {{ student.brojIndeksa }}<br>
+        Godina studiranja: {{ student.godinaStudiranja }}<br>
+        Status budzeta: {{ student.statusBudzeta }}<br>
+        Aktivan: {{ student.aktivan }}
+    </div>
+
+</div>

@@ -1,0 +1,9 @@
+<div class="students">
+
+    <button (click)="prikazi()">Prikazi</button>
+
+    <div *ngIf="this.prikaziDetalje">
+        <app-student-details [student_child]="student_parent" (dogadjaj)="ucitajDetalje($event)"></app-student-details>
+    </div>
+
+</div>
